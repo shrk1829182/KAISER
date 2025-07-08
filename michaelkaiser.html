@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Michael Kaiser 👑 Fanpage</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #0d0d0d, #1e1e2e);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    header {
+      padding: 2rem;
+      background-color: #121212;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #ffd700;
+      margin: 0;
+    }
+
+    .intro {
+      margin: 2rem;
+      font-size: 1.2rem;
+    }
+
+    .kaiser-img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin: 1rem auto;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .carousel {
+      margin: 2rem auto;
+      font-size: 1.3rem;
+      color: #ffd700;
+      padding: 1rem;
+      max-width: 600px;
+      min-height: 50px;
+    }
+
+    footer {
+      background-color: #121212;
+      padding: 1rem;
+      color: #999;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Michael Kaiser 👑</h1>
+    <p>Blue Lock's Emperor of the Field</p>
+  </header>
+
+  <section class="intro">
+    <p>Welcome to the Kaiser Zone. Bow down to the brilliance of Michael Kaiser — elegance, ego, and unstoppable goals wrapped in gold.</p>
+    <img class="kaiser-img" src="https://i.imgur.com/VfJFRyH.png" alt="Kaiser Posing"/>
+  </section>
+
+  <div class="carousel" id="quote-box">Loading Emperor’s decree...</div>
+
+  <section class="gallery">
+    <img src="https://i.imgur.com/VfJFRyH.png" alt="Kaiser 1" />
+    <img src="https://i.imgur.com/rbg1pas.png" alt="Kaiser 2" />
+    <img src="https://i.imgur.com/c3MnvQ0.png" alt="Kaiser 3" />
+  </section>
+
+  <footer>
+    <p>Made with 🦅 and ego by a Kaiser believer</p>
+  </footer>
+
+  <script>
+    const quotes = [
+      "Only I can decide who shines on my field.",
+      "This world revolves around *me* — remember that.",
+      "Don’t compare me to anyone. I’m the Emperor.",
+      "Your story ends where mine begins.",
+      "I score. You admire. That’s the order."
+    ];
+
+    const quoteBox = document.getElementById("quote-box");
+    let quoteIndex = 0;
+
+    function showQuote() {
+      quoteBox.textContent = quotes[quoteIndex];
+      quoteBox.style.opacity = 0;
+      setTimeout(() => {
+        quoteBox.style.opacity = 1;
+      }, 100);
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+    }
+
+    showQuote();
+    setInterval(showQuote, 4000);
+  </script>
+</body>
+</html>
